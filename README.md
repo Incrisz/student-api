@@ -5,8 +5,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/incrisz/student-app.git
-cd student-app
+git clone https://github.com/incrisz/student-api.git
+cd student-api
 
 # Install dependencies
 make install
