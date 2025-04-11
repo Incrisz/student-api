@@ -3,11 +3,8 @@ FROM composer:2.7 AS builder
 
 WORKDIR /app
 
-# Copy only dependency files to leverage caching
 COPY composer.json composer.lock ./
-
-# Install dependencies
-RUN composer install --no-dev --optimize-autoloader --no-interaction
+RUN composer install --no-interaction
 
 # Stage 2: Runtime image
 FROM php:8.1-fpm-alpine
@@ -31,7 +28,7 @@ COPY --from=builder /app/vendor ./vendor
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Copy .env.example as .env (will be overridden by runtime env vars)
+# Copy .env.example as .env
 COPY .env.example .env
 
 # Generate application key

@@ -1,52 +1,47 @@
 # Student API
 
+A REST API for managing student records, built with Laravel. Supports CRUD operations with API versioning.
 
-### 🔧 Installation
+## Setup Instructions
 
-```bash
-# Clone the repository
-git clone https://github.com/incrisz/student-app.git
-cd student-app
+### Prerequisites
+- **Required Tools**:
+  - Bash (available on Linux/macOS, or WSL on Windows)
+- **Optional Tools** (will be installed automatically if missing):
+  - Docker
+  - Docker Compose
+  - GNU Make
 
-# Install dependencies
+### One-Click Local Development Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/incrisz/student-app.git
+   cd student-app
+
+# Install required tools (if not already installed):
+make setup-tools
+
+# Start the API and database:
+make api-run
+
+<!-- Start the API on http://localhost:8000. -->
+
+
+# Manual Setup (Alternative)
+# Install dependencies:
 make install
 
-# Copy environment config
-cp .env.example .env
+# Start the database:
+make db-start
 
-# Create SQLite database file
-touch database/database.sqlite
+# Run migrations:
+make db-migrate
 
-# Run migrations
-make migrate
+# Build the API image:
+make api-build
 
-# Start the application
-make run
-
-# Run automated tests
-make test
-
-
-### Docker Installation
-
-# Build the Docker image:
-make docker-build
-
-# Run the Docker container:
-make docker-run
-
-# Alternatively, run with custom environment variables:
-docker run --rm -p 8000:8000 --env-file .env ghcr.io/incrisz/student-api:1.0.0
-
-# Access the API at http://localhost:8000.
-
-# Pushing to Registry
-# Push the image to GitHub Container Registry:
-
-make docker-push
-
-# Ensure you’re logged in to ghcr.io:
-docker login ghcr.io -u <your-username>
+# Run the API:
+make api-run
 
 # Run unit tests:
 make test
