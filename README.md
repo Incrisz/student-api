@@ -43,5 +43,5 @@ make api-build
 # Run the API:
 make api-run
 
-# Run unit tests:
+<!-- Run unit tests: -->
 make test
