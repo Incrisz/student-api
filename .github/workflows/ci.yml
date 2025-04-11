@@ -29,7 +29,7 @@ on:
 
 jobs:
   ci:
-    runs-on: student-api
+    runs-on: self-hosted
 
     steps:
       # Checkout code
