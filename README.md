@@ -15,8 +15,8 @@ A REST API for managing student records, built with Laravel. Supports CRUD opera
 ### One-Click Local Development Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/incrisz/student-app.git
-   cd student-app
+   git clone https://github.com/incrisz/student-api.git
+   cd student-api
 
 # Install required tools (if not already installed):
 make setup-tools
